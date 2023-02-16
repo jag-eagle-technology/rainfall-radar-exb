@@ -210,7 +210,8 @@ const Widget = (props: AllWidgetProps<IMConfig>) => {
           return response.json();
         })
         .then((data) => {
-          const dateList = [...data.radar.past, ...data.radar.nowcast];
+          // const dateList = [...data.radar.past, ...data.radar.nowcast];
+          const dateList = [...data.radar.past];
 
           setTimePathList(dateList);
           setTimePath(data.radar.past[data.radar.past.length - 1]);
@@ -315,7 +316,7 @@ const Widget = (props: AllWidgetProps<IMConfig>) => {
         <Alert
           // closable
           form="basic"
-          onClose={() => {}}
+          onClose={() => { }}
           open={!mapLoad}
           text={'Please select a map in settings'}
           type="info"
